@@ -1,0 +1,13 @@
+{
+  "name": "dataValidation",
+  "version": "1.0.0",
+  "description": "A data validation API for common data formats like dates, phone numbers, etc...",
+  "main": "index.js",
+  "repository": "https://github.com/srfreitas97/dataValidation.git",
+  "author": "Samuel Ribeiro de Freitas",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
