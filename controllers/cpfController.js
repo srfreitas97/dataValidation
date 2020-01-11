@@ -1,21 +1,22 @@
-const cpfUtils = require('cpf');
+const brValidations = require('br-validations');
 
 module.exports.validateCpf = (req,res,next) => {
     try{
 
-        var cpf = cpfUtils.format(req.query.cpf);
+        var cpf = req.query.cpf.match(/\d/g).join('');
 
-        if(cpfUtils.isValid(cpf)){
+        if(brValidations.cpf.validate(cpf)){
 
             res.status(200).send(cpf);
 
         }
-
-
+        else{
+            throw new Error('Cpf invalido');
+        }
     }
     catch(err){
 
-        res.status(200).send('Formato inválido');
-
+        res.status(200).send(err.message);
+        
     }
 }
